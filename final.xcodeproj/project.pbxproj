@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		8B66FE4E2410E73D0088D049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66FE4D2410E73D0088D049 /* AppDelegate.swift */; };
 		8B66FE502410E73D0088D049 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66FE4F2410E73D0088D049 /* SceneDelegate.swift */; };
-		8B66FE522410E73D0088D049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66FE512410E73D0088D049 /* ViewController.swift */; };
+		8B66FE522410E73D0088D049 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66FE512410E73D0088D049 /* HomeViewController.swift */; };
 		8B66FE552410E73D0088D049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B66FE532410E73D0088D049 /* Main.storyboard */; };
 		8B66FE572410E73D0088D049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B66FE562410E73D0088D049 /* Assets.xcassets */; };
 		8B66FE5A2410E73D0088D049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B66FE582410E73D0088D049 /* LaunchScreen.storyboard */; };
+		8B66FE642410F2090088D049 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66FE632410F2090088D049 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B66FE4A2410E73D0088D049 /* final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = final.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B66FE4D2410E73D0088D049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B66FE4F2410E73D0088D049 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B66FE512410E73D0088D049 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B66FE512410E73D0088D049 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8B66FE542410E73D0088D049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B66FE562410E73D0088D049 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B66FE592410E73D0088D049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B66FE5B2410E73D0088D049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B66FE632410F2090088D049 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				8B66FE4D2410E73D0088D049 /* AppDelegate.swift */,
 				8B66FE4F2410E73D0088D049 /* SceneDelegate.swift */,
-				8B66FE512410E73D0088D049 /* ViewController.swift */,
+				8B66FE632410F2090088D049 /* MenuViewController.swift */,
+				8B66FE512410E73D0088D049 /* HomeViewController.swift */,
 				8B66FE532410E73D0088D049 /* Main.storyboard */,
 				8B66FE562410E73D0088D049 /* Assets.xcassets */,
 				8B66FE582410E73D0088D049 /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B66FE522410E73D0088D049 /* ViewController.swift in Sources */,
+				8B66FE522410E73D0088D049 /* HomeViewController.swift in Sources */,
 				8B66FE4E2410E73D0088D049 /* AppDelegate.swift in Sources */,
 				8B66FE502410E73D0088D049 /* SceneDelegate.swift in Sources */,
+				8B66FE642410F2090088D049 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
