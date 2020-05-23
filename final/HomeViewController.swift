@@ -12,18 +12,28 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var questionText: UITextView!
-    @IBOutlet var answersText: UITextView!
+    @IBOutlet var viewTest: UIStackView!
+    
+    let url = Constants.questionsURL
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let url = "https://opentdb.com/api.php?amount=1"
-        getData(from: url)
+        getData(url)
         //self.answerButton2.setTitle("ddd", for: .normal)
     }
+    
+    
+    
+    @objc func buttonTapped(_ sender: UIButton)
+    {
+        print("button id = ", sender.tag)
+        
+        self.getData(url)
+    }
 
-    private func getData(from url:String)
+    private func getData(_ url:String)
     {
         let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
             guard let data = data, error == nil else {
@@ -48,38 +58,38 @@ class HomeViewController: UIViewController {
             print(json.results[0].question)
             print(json.results[0].correct_answer)
             
-            self.categoryLabel.text = json.results[0].category
-            self.questionText.text = json.results[0].question
-           
-            var i = 1
-            var text = "#" + String(i) + ": " + json.results[0].correct_answer;
-            for item in json.results[0].incorrect_answers
-            {
-                i += 1
-                text += "\n#" + String(i) + ": " + item
+            DispatchQueue.main.async {
+                self.categoryLabel.text = json.results[0].category
+                self.questionText.text = json.results[0].question
+                
+                self.viewTest.arrangedSubviews.forEach { $0.removeFromSuperview() }
+               
+                var i = 1
+                var text = "#" + String(i) + ": " + json.results[0].correct_answer;
+                let button = UIButton()
+                button.tag = i
+                button.setTitle(String(i) + ": " + json.results[0].correct_answer, for: .normal)
+                button.addTarget(self, action: #selector(self.buttonTapped(_:)), for: UIControl.Event.touchUpInside)
+                self.viewTest.addArrangedSubview(button)
+                
+                
+                for item in json.results[0].incorrect_answers
+                {
+                    i += 1
+                    text += "\n#" + String(i) + ": " + item
+                    
+                    let button = UIButton()
+                    button.tag = i
+                    button.setTitle(String(i) + ": " + item, for: .normal)
+                    button.addTarget(self, action: #selector(self.buttonTapped(_:)), for: UIControl.Event.touchUpInside)
+                    self.viewTest.addArrangedSubview(button)
+                }
+                
+                
             }
-            
-            self.answersText.text = text
-            
         })
             
         task.resume()
     }
 
-}
-
-struct Response : Codable
-{
-    let response_code: Int
-    let results: Array<Result>
-}
-
-struct Result :Codable
-{
-    let category: String
-    //type":"multiple",
-    //"difficulty":"easy",
-    let question: String
-    let correct_answer: String
-    let incorrect_answers: Array<String>
 }
