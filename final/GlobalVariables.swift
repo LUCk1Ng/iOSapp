@@ -9,7 +9,7 @@
 import Foundation
 
 struct Constants {
-    static let questionsURL:String = "xxhttps://opentdb.com/api.php?amount=1"
+    static let questionsURL:String = "https://opentdb.com/api.php?amount=1"
 }
 
 struct Response : Codable
